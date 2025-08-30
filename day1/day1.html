@@ -1,0 +1,202 @@
+<!doctype html>
+<html>
+    <head>
+            <link rel="icon" href="logo.webp" type="image/icon type">
+        <title>hello</title>
+        <style>
+            tr:nth-child(even),td:nth-child(even){
+                background-color: rgb(239, 115, 115);
+            }
+            th:nth-child(odd){
+                background-color: rgb(250, 205, 99);
+            }
+            table,th,td {
+                border: 1px solid white;
+                border-collapse: collapse;
+                border-radius: 10px;
+            }
+            th,td{
+                background-color:#edae6b;
+            }
+            td{
+                text-align:left;
+            }
+            a link {
+                color: green;
+                background-color: yellow;
+                padding:20px 15px;
+                text-decoration:none;
+                text-align: center;
+                display: inline-block;
+            }
+            a:visited {
+                color: red;
+                background-color: yellow;
+                text-decoration:none;
+                display: inline-block;
+                padding:20px 15px;
+            }
+            a:hover {
+                color:blue;
+                background-color:yellow;
+                text-decoration:none;
+                padding:20px 15px;
+                display: inline-block;
+            }
+            a:active {
+                color:pink;
+                background-color:yellow;
+                text-decoration: none;
+                padding:20px 15px;
+                display: inline-block;
+            }
+        </style>
+    </head>
+    <body>
+        <p style="text-align: center;"><b>This section is for links in html </b></p>
+        <a href="https://www.youtube.com/watch?v=n-hK4QRGQe0" target="_self">Pretty little baby(_self target)</a><br>
+        <a href="https://www.youtube.com/watch?v=n-hK4QRGQe0" target="_blank">Pretty little baby(_Blank target)</a><br>
+        <a href="https://www.youtube.com/watch?v=n-hK4QRGQe0" target="_parent">Pretty little baby(_parent target)</a><br>
+        <a href="https://www.youtube.com/watch?v=n-hK4QRGQe0" target="_top">Pretty little baby(_top)</a><br>
+        <a href="https://www.merriam-webster.com/dictionary/something">Something</a><br>
+        <hr>
+        <p style="text-align:center;"><b>This Section is for images in html</b></p>
+        <h2>HTML Image</h2>
+        <img src="image.png" alt="Some image" width="100" height="70">
+        <img src="https://images.unsplash.com/photo-1526779259212-939e64788e3c?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZnJlZSUyMGltYWdlc3xlbnwwfHwwfHx8MA%3D%3D"alt="some image" width="100" height="70">
+        <img src="brahmanandam-ready.gif" alt="bramhanandam" width="100" height="70">
+        <p>Now this is to show the float property under style.</p>
+        <p>This shows the float property in left under style we can describe the 
+            float property to left followed by width and height.The description ends here but to look more appealing 
+            This additional text is added which is random and meaning less <img src="logo.jpeg" alt="LOGO" style="float: left;" width="100" height="70"></p>
+        <p><img src="logo.webp" alt="LOGO" style="float: right;" width="100" height="70">
+            Similarly to the above content now the image will pop up in the left side of this paragraph.The description 
+            ends here but to look more appealing. This additional text is added which is random and meaning less. 
+            Now we can see how the images are put to the left side or right ,It is not important where you put the 
+            but float property should be defined clearly.</p>
+        <hr>
+        <p style="text-align: center;"><b>This section is to show the working of maps</b></p>
+        <p>You can click any objects in the below image that will direct you to another link describng that</p>
+        <img src="image copy.png" alt="My workspace" width="623" height="625" float="center" usemap="#workspace">
+        <map name="workspace">
+            <area shape="rect" alt="Laptop" coords="147,304, 352, 393" onclick="laptop()" href="https://www.amazon.in/s?k=laptop&crid=3LZNQTOHMO9CS&sprefix=laptip%2Caps%2C255&ref=nb_sb_ss_mvt-t11-ranker_2_6">
+            <area shape="poly" alt="Me" coords="322,147 , 286,178 , 278,216 , 377,279 , 415,254 , 443,369 ,313,384 ,286,317" onclick="Linkedin()" href="https://www.linkedin.com/in/mythri-d-s">
+            <area shape="rect" alt="coffee" coords="452,364,496,393" onclick="coffee()" href="https://en.wikipedia.org/wiki/Coffee">
+            <area shape="rect" alt="Pot" coords="30,428, 177,561" onclick="pot()" href="https://www.amazon.in/stores/page/64628E39-A149-4098-AE69-38880C397CB1/?_encoding=UTF8&store_ref=SB_A018592113XSOLUSZK0YB-A096518631WJ25CXNUBLF&pd_rd_plhdr=t&aaxitk=fd14cdbcceb2cb8e4b89d31c527d6889&hsa_cr_id=8944183880402&lp_asins=B07BF8HMJ7%2CB07BF8ZHTN%2CB06XQK5FDX&lp_query=flower%20pots%20for%20garden&lp_slot=auto-sparkle-hsa-tetris&ref_=sbx_be_s_sparkle_lsi4d_ls_dpc&pd_rd_w=3uJe4&content-id=amzn1.sym.cbe1d71a-30e3-45dc-b787-bad221b13c68%3Aamzn1.sym.cbe1d71a-30e3-45dc-b787-bad221b13c68&pf_rd_p=cbe1d71a-30e3-45dc-b787-bad221b13c68&pf_rd_r=2NJE6RNC0644MA11ZP2M&pd_rd_wg=e9lqv&pd_rd_r=9144fe76-a70d-4dc4-9c02-772a0debad28">
+            <area shape="rect" alt="Pot" cords="64,237, 149,397" onclick="pot()" href="https://www.amazon.in/stores/page/64628E39-A149-4098-AE69-38880C397CB1/?_encoding=UTF8&store_ref=SB_A018592113XSOLUSZK0YB-A096518631WJ25CXNUBLF&pd_rd_plhdr=t&aaxitk=fd14cdbcceb2cb8e4b89d31c527d6889&hsa_cr_id=8944183880402&lp_asins=B07BF8HMJ7%2CB07BF8ZHTN%2CB06XQK5FDX&lp_query=flower%20pots%20for%20garden&lp_slot=auto-sparkle-hsa-tetris&ref_=sbx_be_s_sparkle_lsi4d_ls_dpc&pd_rd_w=3uJe4&content-id=amzn1.sym.cbe1d71a-30e3-45dc-b787-bad221b13c68%3Aamzn1.sym.cbe1d71a-30e3-45dc-b787-bad221b13c68&pf_rd_p=cbe1d71a-30e3-45dc-b787-bad221b13c68&pf_rd_r=2NJE6RNC0644MA11ZP2M&pd_rd_wg=e9lqv&pd_rd_r=9144fe76-a70d-4dc4-9c02-772a0debad28">
+            <area shape="rect" alt="Pot" cords="375,89,435,180" onclick="pot()" href="https://www.amazon.in/stores/page/64628E39-A149-4098-AE69-38880C397CB1/?_encoding=UTF8&store_ref=SB_A018592113XSOLUSZK0YB-A096518631WJ25CXNUBLF&pd_rd_plhdr=t&aaxitk=fd14cdbcceb2cb8e4b89d31c527d6889&hsa_cr_id=8944183880402&lp_asins=B07BF8HMJ7%2CB07BF8ZHTN%2CB06XQK5FDX&lp_query=flower%20pots%20for%20garden&lp_slot=auto-sparkle-hsa-tetris&ref_=sbx_be_s_sparkle_lsi4d_ls_dpc&pd_rd_w=3uJe4&content-id=amzn1.sym.cbe1d71a-30e3-45dc-b787-bad221b13c68%3Aamzn1.sym.cbe1d71a-30e3-45dc-b787-bad221b13c68&pf_rd_p=cbe1d71a-30e3-45dc-b787-bad221b13c68&pf_rd_r=2NJE6RNC0644MA11ZP2M&pd_rd_wg=e9lqv&pd_rd_r=9144fe76-a70d-4dc4-9c02-772a0debad28">
+            <area shape="rect" alt="Pot" cords="502,305 ,551,550" onclick="pot()" href="https://www.amazon.in/stores/page/64628E39-A149-4098-AE69-38880C397CB1/?_encoding=UTF8&store_ref=SB_A018592113XSOLUSZK0YB-A096518631WJ25CXNUBLF&pd_rd_plhdr=t&aaxitk=fd14cdbcceb2cb8e4b89d31c527d6889&hsa_cr_id=8944183880402&lp_asins=B07BF8HMJ7%2CB07BF8ZHTN%2CB06XQK5FDX&lp_query=flower%20pots%20for%20garden&lp_slot=auto-sparkle-hsa-tetris&ref_=sbx_be_s_sparkle_lsi4d_ls_dpc&pd_rd_w=3uJe4&content-id=amzn1.sym.cbe1d71a-30e3-45dc-b787-bad221b13c68%3Aamzn1.sym.cbe1d71a-30e3-45dc-b787-bad221b13c68&pf_rd_p=cbe1d71a-30e3-45dc-b787-bad221b13c68&pf_rd_r=2NJE6RNC0644MA11ZP2M&pd_rd_wg=e9lqv&pd_rd_r=9144fe76-a70d-4dc4-9c02-772a0debad28">
+        </map>
+        <script>
+            function laptop(){
+                alert("YOU CLICKED THE LAPTOP");
+            }
+            function Linkedin(){
+                alert("yOU CLICKED MY3 PROFILE");
+            }
+            function coffee(){
+                alert("YOU CLICKED THE COFFEE MUG");
+            }
+            function pot(){
+                alert("YOU CLICKED THE FLOWER POT");
+            }
+        </script>
+        <p style="background-image: url('image.png');" style="background-repeat: none;" 
+        style="background-attachment:fixed;"  style="background-size:100% 100%;"> This is some random text compied from wikipedia.<br>
+            Being a girl is different for everyone, but there's one thing that unites us all: girl power! There <br>
+            is nothing like being a girl and being proud. Confidence is key, ladies! Whether you step out in<br>
+            stilettos or sneakers, or chapstick or lipstick, being a girl is about so much more than just the <br>
+            stereotypes that so often define us. Womanhood is about supporting, loving, accepting, and fighting<br>
+            for each other. Ahead, we've gathered the best and funniest girl power quotes and song lyrics for<br>
+            anyone who needs a reminder about how fabulous it is to be a woman, however that looks for you.<br>
+        </p>
+        <p>
+            This para shows the way picture element works in html.It can contain zero or more sorce images.
+            <picture> 
+                <source media="(min-width:75px)" srcset="brahmanandam-ready.gif" float="left">
+                <source media="(min-width:500px)" srcset="logo.webp">
+                <img src="image copy.png" alt="Some image" width="100" height="70">
+            </picture>
+        </p>
+        <hr>
+        <p style="text-align: center;"><b>This section is to define the table</b></p>
+        <table style="width:100%">
+            <tr>
+            <th>Tag </th>
+            <th>Description</th>
+            </tr>
+            <tr>
+                <td><q>&lt;table&gt; tag</q></td>
+                <td>Defines table existance</td>
+            </tr>
+            <tr>
+                <td><q>&lt;th&gt; tag</q></td>
+                <td>Defines table header cell</td>
+            </tr>
+            <tr>
+                <td><q>&lt;tr&gt; tag</q></td>
+                <td>Defines table row</td>
+            </tr>
+            <tr>
+                <td><q>&lt;td&gt; tag</q></td>
+                <td>Defines table data</td>
+            </tr>
+            <tr>
+                <td><q>&lt;caption&gt; tag</q></td>
+                <td>Defines table caption</td>
+            </tr>
+            <tr>
+                <td><q>&lt;colgroup&gt; tag</q></td>
+                <td>Specifies more than 1 column in a table for formatting</td>
+            </tr>
+            <tr>
+                <td><q>&lt;col&gt; tag</q></td>
+                <td>Specifies column property in each &lt;colgroup&gt; element</td>
+            </tr>
+            <tr>
+                <td><q>&lt;thead&gt; tag</q></td>
+                <td>Groups header content in a table</td>
+            </tr>
+            <tr>
+                <td><q>&lt;tbody&gt; tag</q></td>
+                <td>Groups the body content in table</td>
+            </tr>
+            <tr>
+                <td><q>&lt;tfoot&gt; tag</q></td>
+                <td>Groups the footer content in the table</td>
+            </tr>
+        </table>
+        <p>Example for calspan</p>
+        <table style="width:66%">
+            <caption>Names</caption>
+            <tr>
+                <th colspan="2">Name</th>
+                <th>Age</th>
+            </tr>
+            <tr>
+                <td>Jill</td>
+                <td>Smith</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td>Eve</td>
+                <td>Jackson</td>
+                <td>94</td>
+            </tr>
+        </table>
+        <p>This is example for rowspan</p>
+        <table style="width:60%">
+            <tr>
+                <th>Name</th>
+                <td>Jill</td>
+            </tr>
+            <tr>
+                <th rowspan="2">Phone</th>
+                <td>555-1234</td>
+            </tr>
+            <tr>
+                <td>555-8745</td>
+            </tr>
+        </table>
+    </body>
+</html>
