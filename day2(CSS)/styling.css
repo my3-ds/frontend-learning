@@ -1,0 +1,66 @@
+body {
+    background-color: hsl(185, 83%, 77%);
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url("images.jpg");
+    background-repeat: no-repeat;
+    background-position: right top;
+    margin-right: 100px;
+    background-attachment: fixed;
+}
+h1 {
+    text-align: center;
+    margin: 10px 0;
+    color: #333;
+}
+nav ul {
+    list-style: none;       /* remove bullets */
+    display: flex;          /* flexbox layout */
+    justify-content: center;/* center links */
+    gap: 30px;              /* spacing between links */
+    margin: 0;
+    padding: 0;
+}
+nav ul li a {
+    text-decoration: none;  /*To remove underline */
+    color: #333;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: background 0.3s, color 0.3s;
+}
+nav ul li a:hover {
+    background-color: #333;
+    color: white;
+}
+section, aside, article {
+    background: white;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: rgb(199, 239, 194);
+    font-weight: bold;
+    margin-top: 20px;
+    border-top: 2px solid #ccc;
+}
+img{
+    background-attachment: local;
+    background-position: top;
+}
+form{
+    font-size: large;
+}
+input{
+    width:400px;
+    font-size: large;
+}
+textarea {
+  width: 400px;
+  height: 200px;
+}
