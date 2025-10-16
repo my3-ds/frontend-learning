@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MY3.com</title>
+</head>
+<body>
+  <marquee direction="rtl"><h1>JavaScript Topics Demo</h1></marquee>
+  
+  <h2>Form Example</h2>
+  <form id="demoForm">
+    <label>Enter Text: </label>
+    <input type="text" id="textInput">
+    <button type="submit">Submit</button>
+  </form>
+
+  <h2>DOM Output</h2>
+  <p id="output"></p>
+
+  <script>
+    // JS Scope
+    var globalVar = "I am Global Scope";
+    function testScope() {
+      let blockScope = "I am Block Scope (let)";
+      const constScope = "I am Constant Scope";
+      return globalVar + " | " + blockScope + " | " + constScope;
+    }
+    console.log("Scope Example:", testScope());
+
+    // JS Classes
+    class Animal {
+      constructor(name) {
+        this.name = name;
+      }
+      speak() {
+        return `${this.name} makes a noise.`;
+      }
+    }
+    class Dog extends Animal {
+      speak() {
+        return `${this.name} barks.`;
+      }
+    }
+    let dog = new Dog("Bruno");
+    console.log("Class Example:", dog.speak());
+
+    // JS Sets & WeakSets
+    let set = new Set([1, 2, 3, 3]);
+    set.add(4);
+    console.log("Set Example:", set, "Has 2?", set.has(2));
+
+    let weakSet = new WeakSet();
+    let obj1 = {a:1};
+    weakSet.add(obj1);
+    console.log("WeakSet Example: Has obj1?", weakSet.has(obj1));
+
+    // JS Maps & WeakMaps
+    let map = new Map();
+    map.set("name", "Mythri");
+    map.set("age", 22);
+    console.log("Map Example:", map.get("name"), map.size);
+
+    let weakMap = new WeakMap();
+    let obj2 = {};
+    weakMap.set(obj2, "secret");
+    console.log("WeakMap Example:", weakMap.get(obj2));
+
+    // JS Regular Expressions
+    let str = "Hello 123, welcome to 2025!";
+    let regex = /\d+/g;   // match digits (meta char \d), quantifier +, global flag
+    console.log("Regex Example (digits):", str.match(regex));
+
+    let regex2 = /Hello/i; // case-insensitive flag
+    console.log("Regex Flag Example:", regex2.test("hello"));
+
+    let regex3 = /(?<=Hello )\d+/; // assertion (lookbehind)
+    console.log("Regex Assertion Example:", "Hello 42".match(regex3));
+
+    // JS Programming + DOM
+    document.getElementById("demoForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      // Get input value
+      let val = document.getElementById("textInput").value;
+
+      // Apply regex to check if only letters
+      let onlyLetters = /^[A-Za-z]+$/;
+      let result = onlyLetters.test(val) ? "Only Letters " : "Not Only Letters ";
+
+      // Update DOM
+      let outputEl = document.getElementById("output");
+      outputEl.textContent = "You entered: " + val + " | Test Result: " + result;
+
+      // Change CSS dynamically (without writing CSS file)
+      outputEl.style.color = result.includes("Not") ? "red" : "green";
+    });
+
+    // DOM Document Methods Example
+    console.log("Document Title:", document.title);
+    console.log("All Forms:", document.forms);
+    console.log("All Elements:", document.getElementsByTagName("*").length);
+  </script>
+</body>
+</html>
