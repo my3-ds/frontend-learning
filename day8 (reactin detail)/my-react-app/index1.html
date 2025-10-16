@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+  <body>
+    <p id="demo"></p>
+    <script>
+      function Datof(dat){
+        const d = dat.getDate();
+        const m = dat.getMonth()+1;
+        const y = dat.getFullYear();
+        return [d,m,y];
+      }
+      const [date, month, year] = Datof(new Date());
+
+      document.getElementById("demo").innerHTML="This year is "+year;
+    </script>
+  </body>
+</html>

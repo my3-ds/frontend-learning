@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <body>
+    <p id="demo"></p>
+        <script>
+            const person = {
+            firstName: "John",
+            lastName: "Doe",
+            age: 50,
+            car: {
+                brand: 'Ford',
+                model: 'Mustang',
+            }
+            };
+
+            // Destructuring
+            let {firstName, car: { brand, model }} = person;
+
+            // Access the variables:
+            let message = `My name is ${firstName}, and I drive a ${brand} ${model}.`;
+
+            document.getElementById("demo").innerHTML = message;
+        </script>
+    </body>
+</html>
