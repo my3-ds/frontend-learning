@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My3 3*3 Picture Puzzle</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="icon-x" href="image.png">
+</head>
+<body>
+  <Marquee><h1> 3*3 Picture Puzzle</h1></Marquee>
+
+  <div id="game-info">
+    <span id="timer">Time: 0s</span>
+    <span id="moves">Moves: 0</span>
+  </div>
+
+  <!-- Uploading image -->
+  <div>
+    <label for="imageUpload">Choose an image: </label>
+    <input type="file" id="imageUpload" accept="image/*">
+  </div>
+
+  <!-- For the Puzzle Board -->
+  <div id="puzzle-board"></div>
+
+  <!-- tale of puzzle pieces -->
+  <h2>Puzzle Pieces</h2>
+  <div id="puzzle-pieces"></div>
+
+  <!-- Image for Reference -->
+  <h3>Reference</h3>
+  <div id="reference"></div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <h2 id="congrats-msg"></h2>
+      <button onclick="startGame()">Restart</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
