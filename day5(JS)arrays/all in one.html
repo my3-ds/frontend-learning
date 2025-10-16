@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My3.com</title>
+  <style>
+    :root{
+      font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    }
+
+    body{
+      margin:0;
+      padding:2rem;
+      background:#827be9;
+      color:#100101;
+    }
+
+    .wrap{
+      max-width:900px;
+      margin:0 auto; 
+    }
+
+    h1{
+      font-size:1.6rem;
+      margin-bottom:.25rem;
+    }
+
+    p.lead{
+      margin-top:0;
+      color:#040405;
+    }
+
+    .card{
+      background:rgb(70, 239, 217);
+      border-radius:10px;
+      padding:1rem;margin:1rem 0;
+      box-shadow:0 1px 4px rgba(2,6,23,0.06);
+    }
+
+    pre{
+      background:#eb9539;
+      color:#b8d6fa;
+      padding:0.75rem;
+      border-radius:6px;
+      overflow:auto;
+    }
+      
+    button{
+      padding:.5rem .75rem;border-radius:6px;
+      border:1px solid #9e81e7;
+      background:#1f4699;
+      color:#f6e1e1;
+      cursor:pointer
+    }
+
+    .out{
+      white-space:pre-wrap;
+      font-family:monospace;
+      background:#6bfcfa;
+      padding:0.5rem;
+      border-radius:6px;
+      border:1px dashed #6af773}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1 style="text-align: center;">JS Below topics Examples</h1>
+    <p class="lead">This website collects examples for Dates,
+      Math, Booleans, comparisons, logicals, branches, 
+      loops, errors, scope, blocks and data types. 
+    </p>
+
+    <div class="card">
+      <h2>1 — Dates</h2>
+      <p>Shows creation, formatting and arithmetic with dates.</p>
+      <button id="runDates">Run Dates</button>
+      <div id="datesOut" class="out"></div>
+    </div>
+
+    <div class="card">
+      <h2>2 — Math &amp; Numbers</h2>
+      <p>Math functions, rounding, random, and edge cases like Infinity / NaN.</p>
+      <button id="runMath">Run Math</button>
+      <div id="mathOut" class="out"></div>
+    </div>
+
+    <div class="card">
+      <h2>3 — Boolean, Comparisons &amp; Logical</h2>
+      <p>Strict vs loose equality, ordering and logical operators.</p>
+      <button id="runLogic">Run Logic</button>
+      <div id="logicOut" class="out"></div>
+    </div>
+
+    <div class="card">
+      <h2>4 — if / else, switch</h2>
+      <p>Branching examples and fall-through demonstration.</p>
+      <button id="runBranches">Run Branches</button>
+      <div id="branchesOut" class="out"></div>
+    </div>
+
+    <div class="card">
+      <h2>5 — Loops: for, while, do..while, break, continue</h2>
+      <p>Loop examples including using break &amp; continue.</p>
+      <button id="runLoops">Run Loops</button>
+      <div id="loopsOut" class="out"></div>
+    </div>
+
+    <div class="card">
+      <h2>6 — Errors, try/catch</h2>
+      <p>Throwing and catching errors, and finally block.</p>
+      <button id="runErrors">Run Errors</button>
+      <div id="errorsOut" class="out"></div>
+    </div>
+
+    <div class="card">
+      <h2>7 — Scope &amp; Code Blocks</h2>
+      <p>var / let / const and block scope behavior.</p>
+      <button id="runScope">Run Scope</button>
+      <div id="scopeOut" class="out"></div>
+    </div>
+
+    <div class="card">
+      <h2>8 — JS Data Types (quick tour)</h2>
+      <p>Demonstrates primitives and objects with typeof.</p>
+      <button id="runTypes">Run Types</button>
+      <div id="typesOut" class="out"></div>
+    </div>
+
+  </div>
+
+  <script>
+  function out(el, text){
+    console.log(text);
+    const node = typeof el === 'string' ? document.getElementById(el) : el;
+    node.textContent = (node.textContent ? node.textContent + '\n' : '') + String(text);
+  }
+
+  // This function is for date
+  function demoDates(){
+    const now = new Date();
+    const iso = now.toISOString();
+    const d = new Date('2023-01-01T00:00:00Z');
+    const diffMs = now - d; // milliseconds
+    const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+
+    out('datesOut', `now: ${now}`);
+    out('datesOut', `ISO: ${iso}`);
+    out('datesOut', `Since 2023-01-01: ${diffDays} days (~${Math.round(diffMs/1000)} seconds)`);
+
+    // Add 7 days
+    out('This is for example of defining new date method')
+    const plus7 = new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000);
+    out('datesOut', `7 days from now: ${plus7.toDateString()}`);
+  }
+
+  // Math functions 
+  function demoMath(){
+    out('mathOut', `Math.PI = ${Math.PI}`);
+    out('mathOut', `Math.round(4.6) = ${Math.round(4.6)}`);
+    out('mathOut', `Math.floor(4.9) = ${Math.floor(4.9)}`);
+    out('mathOut', `Math.random() (0-1) = ${Math.random()}`);
+    out('mathOut', `parseInt('123px') = ${parseInt('123px',10)}`);
+    out('mathOut', `Number('not') = ${Number('not')} (NaN)`);
+    out('mathOut', `isNaN(Number('not')) = ${isNaN(Number('not'))}`);
+    out('mathOut', `1/0 => ${1/0}`);
+  }
+
+  // Boolean, comparisons, logical
+  function demoLogic(){
+    out('logicOut', `true && false = ${true && false}`);
+    out('logicOut', `true || false = ${true || false}`);
+    out('logicOut', `!true = ${!true}`);
+
+    out('logicOut', `5 == '5' -> loose equality: ${5 == '5'}`);
+    out('logicOut', `5 === '5' -> strict equality: ${5 === '5'}`);
+
+    out('logicOut', `null == undefined -> ${null == undefined}`);
+    out('logicOut', `null === undefined -> ${null === undefined}`);
+
+    out('logicOut', `0 == false -> ${0 == false}`);
+    out('logicOut', `0 === false -> ${0 === false}`);
+
+    // Short-circuiting
+    const left = null;
+    const fallback = left || 'fallback value';
+    out('logicOut', `null || 'fallback' => ${fallback}`);
+  }
+
+  // 4 — if / else & switch
+  function demoBranches(){
+    const score = 78;
+    let grade;
+    if (score >= 90) grade = 'A';
+    else if (score >= 75) grade = 'B';
+    else if (score >= 60) grade = 'C';
+    else grade = 'F';
+    out('branchesOut', `score ${score} -> grade ${grade}`);
+
+    // switch with fall-through example
+    const day = new Date().getDay(); // 0..6
+    let dayName;
+    switch(day){
+      case 0: dayName = 'Sunday'; break;
+      case 1: dayName = 'Monday'; break;
+      case 2: dayName = 'Tuesday'; break;
+      case 3: dayName = 'Wednesday'; break;
+      case 4: dayName = 'Thursday'; break;
+      case 5: dayName = 'Friday'; break;
+      case 6: dayName = 'Saturday'; break;
+      default: dayName = 'Unknown';
+    }
+    out('branchesOut', `Today is ${dayName} (switch)`);
+  }
+
+  // Loops, break, continue
+  function demoLoops(){
+    const arr = [1,2,3,4,5,6,7,8,9,10];
+    out('loopsOut', 'for loop (print until value>5 then break):');
+    for(let i=0;i<arr.length;i++){
+      if(arr[i] > 5) { out('loopsOut', `breaking at ${arr[i]}`); break; }
+      out('loopsOut', `i=${i} val=${arr[i]}`);
+    }
+
+    out('loopsOut', 'for..of (skip even numbers using continue):');
+    for(const v of arr){
+      if(v % 2 === 0) continue; // skip even
+      out('loopsOut', `odd: ${v}`);
+    }
+
+    out('loopsOut', 'while loop count to 3:');
+    let c = 0;
+    while(c < 3){ out('loopsOut', `count ${c}`); c++; }
+
+    out('loopsOut', 'do..while runs at least once:');
+    let d = 0;
+    do{ out('loopsOut', `d=${d}`); d++; } while(d < 0);
+  }
+
+  // Errors and try/catch
+  function demoErrors(){
+    try{
+      out('errorsOut', 'About to JSON.parse invalid string...');
+      JSON.parse('this is not JSON'); // will throw
+    } catch(err){
+      out('errorsOut', `Caught error: ${err.name} - ${err.message}`);
+    } finally{
+      out('errorsOut', 'Finally block executed');
+    }
+
+    // Throwing a custom error
+    try{
+      function validate(n){ 
+        if(typeof n !== 'number') throw new TypeError('Expected a number'); 
+      }
+      validate('oops');
+    } catch(e){ out('errorsOut', `Custom error: ${e}`); }
+  }
+
+  // Scope & code blocks
+  function demoScope(){
+    if(true){ 
+      var x = 'var is function-scoped'; 
+      let y = 'let is block-scoped'; 
+      const z = 'const is block-scoped'; 
+      out('scopeOut', `inside block: x='${x}', y='${y}'`); 
+    }
+    out('scopeOut', `outside block: x='${x}'`);
+    try{ 
+      out('scopeOut', `outside block: y='${y}'`);
+    } 
+    catch(e){ 
+      out('scopeOut', `accessing y outside block throws: ${e.name}`); 
+    }
+    const obj = {a:1}; obj.a = 2; 
+    out('scopeOut', `const object can be mutated: ${JSON.stringify(obj)}`);
+  }
+
+  // JS data types
+  function demoTypes(){
+    const examples = [
+      42,
+      3.14,
+      'hello',
+      true,
+      null,
+      undefined,
+      Symbol('id'),
+      BigInt(9007199254740991),
+      {name:'obj'},
+      [1,2,3],
+      function fn(){}
+    ];
+    examples.forEach(v => out('typesOut', `${String(v)} -> typeof: ${typeof v}`));
+    out('typesOut', `typeof null === 'object' => ${typeof null}`);
+  }
+
+  document.getElementById('runDates').addEventListener('click', demoDates);
+  document.getElementById('runMath').addEventListener('click', demoMath);
+  document.getElementById('runLogic').addEventListener('click', demoLogic);
+  document.getElementById('runBranches').addEventListener('click', demoBranches);
+  document.getElementById('runLoops').addEventListener('click', demoLoops);
+  document.getElementById('runErrors').addEventListener('click', demoErrors);
+  document.getElementById('runScope').addEventListener('click', demoScope);
+  document.getElementById('runTypes').addEventListener('click', demoTypes);
+
+  demoDates(); 
+  demoTypes();
+  </script>
+</body>
+</html>
